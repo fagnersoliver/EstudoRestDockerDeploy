@@ -15,6 +15,7 @@ public class GreetingController {
 
     private final AtomicLong counter =  new AtomicLong();
 
+    /* Fazendo o get para exibir o rest*/
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name",defaultValue = "World") String name){
         return new Greeting(counter.incrementAndGet(), String.format(template,name));
